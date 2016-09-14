@@ -46,6 +46,8 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | delete a person | remove entries that I no longer need
 `* * *` | user | find a person by name | locate details of persons without having to go through the entire list
 `* *` | user | hide [private contact details](#private-contact-detail) by default | minimize chance of someone else seeing them by accident
+`* *` | user | delete a person by name | simplify the process of deletion without having to know the index of the person to be deleted
+`* *` | user | quickly access previous commands | avoid typing repetitive commands 
 `*` | user with many persons in the address book | sort persons by name | locate a person easily
 
 
@@ -74,12 +76,45 @@ Use case ends.
 > 3a1. AddressBook shows an error message <br>
   Use case resumes at step 2
 
+### Use Case: Edit tag
+
+**MSS**
+
+1. User requests to list tags
+2. AddressBook shows a list of tags
+3. User requests to change the name of a specific tag in the list and offer a new name to the tag
+4. AddressBook confirms that the user wants to change the name of the tag chosen into the new name
+5. User confirms the change to be made by AddressBook
+6. AddressBook makes the change to the tag specifie
+
+**Extensions**
+
+2a. The list is empty
+
+> AddressBook prompts the user that there are no tags in the list
+  Use case ends
+  
+3a. The tag specified by the user does not exist
+
+> AddressBook shows an error message 
+  User case ends
+  
+5a. The user declines the change
+
+> AddressBook shows a message that acknowledge user's decision to not change the tag.
+  User case ends
+   
+ 
+
+
 ## Appendix C : Non Functional Requirements
 
 1. Should work on any [mainstream OS](#mainstream-os) as long as it has Java 8 or higher installed.
 2. Should be able to hold up to 1000 persons.
 3. Should come with automated unit tests and open source code.
 4. Should favor DOS style commands over Unix-style commands.
+5. Should be able to respond in less than 0.5 seconds.
+6. Should be able to achieve any intended function within 5 words of command.
 
 ## Appendix D : Glossary
 
